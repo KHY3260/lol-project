@@ -1,10 +1,3 @@
-<<<<<<< Updated upstream
-export default function ItemsPage() {
-  return (
-    <div>
-      <h1 className="text-2xl font-bold">아이템 목록</h1>
-    </div>
-=======
 import { fetchItemList } from "@/utils/serverApi";
 import { Item } from "@/types/items";
 import ItemListClient from "@/components/ItemListClient";
@@ -19,6 +12,5 @@ export default async function ItemsPage() {
       </h1>
       <ItemListClient items={items} />
     </section>
->>>>>>> Stashed changes
   );
 }

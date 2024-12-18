@@ -126,3 +126,58 @@ export const fetchItemList = async (): Promise<Item[]> => {
     throw new Error("아이템 목록을 불러오는 중 오류가 발생했습니다.");
   }
 };
+
+export const getChampionRotation = async (): Promise<Champion[]> => {
+  try {
+    const version = await fetchLatestVersion();
+
+    const rotationResponse = await fetch("/api/rotation");
+    if (!rotationResponse.ok) {
+      throw new Error("로테이션 데이터를 가져오는 데 실패했습니다.");
+    }
+    const rotationData = await rotationResponse.json();
+
+    const championsResponse = await fetch(
+      `https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/champion.json`
+    );
+    if (!championsResponse.ok) {
+      throw new Error("챔피언 데이터를 가져오는 데 실패했습니다.");
+    }
+
+    const championsData = (await championsResponse.json()) as {
+      data: Record<string, Champion>;
+    };
+
+    return rotationData.freeChampionIds.map((id: number) => {
+      const champ = Object.values(championsData.data).find(
+        (champion) => Number(champion.key) === id
+      );
+
+      if (!champ) {
+        throw new Error(
+          `챔피언 ID ${id}에 해당하는 챔피언을 찾을 수 없습니다.`
+        );
+      }
+
+      return {
+        id: champ.id,
+        name: champ.name,
+        title: champ.title,
+        image: {
+          full: `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ.id}_0.jpg`,
+          sprite: champ.image.sprite,
+          group: champ.image.group,
+          x: champ.image.x,
+          y: champ.image.y,
+          w: champ.image.w,
+          h: champ.image.h,
+        },
+      };
+    });
+  } catch (error) {
+    console.error("로테이션 챔피언 불러오기 실패:", error);
+    throw new Error(
+      "로테이션 챔피언 데이터를 불러오는 중 오류가 발생했습니다."
+    );
+  }
+};
