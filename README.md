@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+League of Legends Information은 리그 오브 레전드 챔피언, 아이템, 로테이션 정보를 제공하는 웹 애플리케이션입니다. Next.js 14과 Tailwind CSS를 기반으로 제작되었습니다.
 
-## Getting Started
+📚 목차
+소개
+기능
+폴더 구조
+기술 스택
 
-First, run the development server:
+-------------------------------------------------------------------------------------------------------------------------
+1. 소개
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+이 프로젝트는 리그 오브 레전드에서 제공하는 데이터를 활용하여 챔피언, 아이템, 로테이션 정보를 확인할 수 있는 간단한 웹 애플리케이션입니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-------------------------------------------------------------------------------------------------------------------------
+2. 기능
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+챔피언 목록: 챔피언의 이미지와 설명, 타이틀 확인
+챔피언 상세정보 : 챔피언의 이름, 제목, 배경, 기본 스텟, 스킬 설명 확
+아이템 목록: 아이템의 이름, 설명, 가격 확인
+로테이션 챔피언: 주간 로테이션 챔피언 확인
+반응형 UI: 모바일, 데스크톱 환경에 최적화된 디자인
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-------------------------------------------------------------------------------------------------------------------------
 
-## Learn More
+3. 폴더 구조
 
-To learn more about Next.js, take a look at the following resources:
+![스크린샷 2024-12-19 101452](https://github.com/user-attachments/assets/787b9201-d39e-45dc-95a3-efbbfc26fffc)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-------------------------------------------------------------------------------------------------------------------------
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. 기술스택
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Framework: Next.js 14
+CSS: Tailwind CSS
+State Management: React Query
+Type Safety: TypeScript
