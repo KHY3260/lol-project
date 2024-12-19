@@ -14,7 +14,7 @@ const cleanDescription = (description: string): string => {
 
 export default function ItemListClient({ items }: ItemListClientProps) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 px-4">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 max-w-6xl mx-auto">
       {items.map((item) => (
         <div
           key={item.id}
@@ -28,13 +28,10 @@ export default function ItemListClient({ items }: ItemListClientProps) {
             height={80}
             className="rounded-md"
           />
-
           <h2 className="mt-3 text-lg font-bold text-red-400">{item.name}</h2>
-
           <p className="mt-2 text-gray-300 text-sm text-center leading-relaxed">
             {cleanDescription(item.description)}
           </p>
-
           <p className="mt-auto font-semibold text-green-400">
             가격: {item.gold.total}골드
           </p>

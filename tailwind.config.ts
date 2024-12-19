@@ -8,9 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      container: {
+        center: true,
+        padding: "0", // 컨테이너 여백 제거
       },
     },
   },
