@@ -13,7 +13,7 @@ export default function RotationPage() {
     isError,
   } = useQuery<Champion[]>({
     queryKey: ["championRotation"],
-    queryFn: getChampionRotation,
+    queryFn: () => getChampionRotation(),
   });
 
   if (isLoading) {
