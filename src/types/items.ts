@@ -12,3 +12,18 @@ export interface Item {
     full: string;
   };
 }
+
+export interface ItemData {
+  name: string;
+  description: string;
+  gold: {
+    base: number;
+    total: number;
+    sell: number;
+  };
+  from?: string[];
+  into?: string[];
+  image: {
+    full: string;
+  };
+}

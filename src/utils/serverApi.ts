@@ -1,5 +1,5 @@
 import { Champion, Spell } from "@/types/champion";
-import { Item } from "@/types/items";
+import { Item, ItemData } from "@/types/items";
 import { ChampionDetail } from "@/types/champion";
 
 export const fetchLatestVersion = async (): Promise<string> => {
@@ -97,7 +97,7 @@ export const fetchItemList = async (): Promise<Item[]> => {
 
     const data = await response.json();
 
-    return Object.entries(data.data as Record<string, any>).map(
+    return Object.entries(data.data as Record<string, ItemData>).map(
       ([id, itemData]) => {
         if (!itemData.image || !itemData.image.full) {
           throw new Error(`아이템 데이터에 image가 없습니다. ID: ${id}`);
