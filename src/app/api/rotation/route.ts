@@ -8,7 +8,9 @@ export async function GET() {
     const response = await fetch(
       "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations",
       {
-        headers: { "X-Riot-Token": RIOT_API_KEY! },
+        headers: {
+          "X-Riot-Token": "RGAPI-778341e6-c0a3-4350-accc-ee731a2c1244",
+        },
       }
     );
 
