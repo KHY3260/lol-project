@@ -4,12 +4,11 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
+    const RIOT_API_KEY = process.env.RIOT_API_KEY;
     const response = await fetch(
       "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations",
       {
-        headers: {
-          "X-Riot-Token": "RGAPI-778341e6-c0a3-4350-accc-ee731a2c1244",
-        },
+        headers: { "X-Riot-Token": RIOT_API_KEY! },
       }
     );
 
